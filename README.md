@@ -13,6 +13,7 @@ git clone https://github.com/YourNameHere/I_Book.git
 cd I_Book
 git remote add upstream https://github.com/Vs-karma/I_Book.git
 
+
 ```
 ### Create a Branch for your feature
 
@@ -45,7 +46,7 @@ npm init
 npx init      
 npm install express --save   
 npm install --save gh-pages
-
+npm install react-scripts
 ```
 ### Write Code
 
