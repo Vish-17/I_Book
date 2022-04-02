@@ -45,6 +45,7 @@ npm init
 npx init      
 npm install express --save   
 npm install --save gh-pages
+npm install react-scripts
 
 ```
 ### Write Code
