@@ -30,7 +30,7 @@ To get started with app
 you guys need to install node js and 'vs studio' in your system 
 and install follwing as I am mention 
 
-In backend file , type following in your vs-code terminal 
+In backend folder , type following in your vs-code terminal 
 npm i bcryptjs    
 npm install --save express-validator
 npm install -g nodemon    
