@@ -12,8 +12,21 @@ import { Alert } from './components/Alert';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import { useState } from 'react';
+import Main from './components/Main';
+
+//Socket
+import io from 'socket.io-client'
+import {nanoid} from 'nanoid'
+
+const socket = io.connect('http://localhost:4000')
+//Socket
+
 
 function App() {
+  const [noteshare, setNoteshare] = useState('')
+  const [note, setNote] = useState([])
+
+
   const [alert, setAlert] = useState(null);
 
   const showAlert = (message, type) => {
@@ -34,6 +47,7 @@ function App() {
           <Alert alert={alert}/>
           <div className="container">
             <Routes>
+              <Route exact path="/" element={<Main showAlert={showAlert}/>} />
               <Route exact path="/about" element={<About showAlert={showAlert}/>} />
               <Route exact path="/home" element={<Home showAlert={showAlert}/>} />
               <Route exact path="/login" element={<Login showAlert={showAlert}/>} />
