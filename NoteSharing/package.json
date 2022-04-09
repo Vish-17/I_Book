@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
+    "mongo-adapter": "^1.0.8",
+    "mongodb": "^4.5.0",
     "nodemon": "^2.0.15",
     "socket.io": "^4.4.1",
     "socket.io-client": "^4.4.1"

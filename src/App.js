@@ -14,17 +14,12 @@ import Signup from './components/Signup';
 import { useState } from 'react';
 import Main from './components/Main';
 
-//Socket
-import io from 'socket.io-client'
-import {nanoid} from 'nanoid'
 
-const socket = io.connect('http://localhost:4000')
-//Socket
 
 
 function App() {
-  const [noteshare, setNoteshare] = useState('')
-  const [note, setNote] = useState([])
+  // const [noteshare, setNoteshare] = useState('')
+  // const [note, setNote] = useState([])
 
 
   const [alert, setAlert] = useState(null);
