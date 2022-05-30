@@ -35,7 +35,7 @@ const AddNote = (props) => {
     useEffect(() => {
       socket.on("noteshare",(payload)=>{
         setSendNotes([...sendNotes, payload])
-        addNote(note.title, note.description, note.tag)        
+        // addNote(note.title, note.description, note.tag)        
         showAlert("Your Notes has been added","success")
       })
     })
@@ -54,6 +54,7 @@ const AddNote = (props) => {
     // }
 
     return (
+        <>
         <div className="container my-3">
             <h1>Add Notes</h1>
             <form>
@@ -74,6 +75,7 @@ const AddNote = (props) => {
             <h1>Your Notes</h1>
             
         </div>
+        </>
     )
 }
 
