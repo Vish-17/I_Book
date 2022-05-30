@@ -54,7 +54,6 @@ const AddNote = (props) => {
     // }
 
     return (
-        <>
         <div className="container my-3">
             <h1>Add Notes</h1>
             <form>
@@ -75,7 +74,6 @@ const AddNote = (props) => {
             <h1>Your Notes</h1>
             
         </div>
-        </>
     )
 }
 
