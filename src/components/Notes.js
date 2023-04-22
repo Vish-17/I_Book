@@ -5,16 +5,6 @@ import NoteItem from './NoteItem';
 import AddNote from './AddNote';
 import { useNavigate } from 'react-router-dom';
 
-
-
-//Socket
-import io from 'socket.io-client'
-// import {nanoid} from 'nanoid'
-
-const socket = io.connect('http://localhost:4000')
-//Socket
-
-
 const Notes = (props) => {
     const context = useContext(noteContext)
     const { notes, getNote, editNote } = context;
@@ -22,11 +12,6 @@ const Notes = (props) => {
     let redirect = useNavigate()
     const ref = useRef(null)
     const refClose = useRef(null)
-
-    //Socket
-    const [sendNotes, setSendNotes] = useState([])
-    //Socket
-
     const { showAlert } = props
     useEffect(() => {
         if (localStorage.getItem('token')) {
@@ -48,24 +33,10 @@ const Notes = (props) => {
         editNote(note.id, note.etitle, note.edescription, note.etag);
         refClose.current.click()
 
-        //Socket Emition
-        socket.emit("noteshare", {notes})
-        //Socket Emition end
-
         setNote({ id: "", etitle: "", edescription: "", etag: "" })
         showAlert("your Notes has been updated", "success")
         e.preventDefault();
     }
-
-
-    //socket
-    useEffect(() => {
-        socket.on("noteshare",(payload)=>{
-          setSendNotes([...sendNotes, payload])
-          // addNote(note.title, note.description, note.tag)        
-          showAlert("Your Notes has been added","success")
-        })
-      })
 
     const onChange = (e) => {
         setNote({ ...note, [e.target.name]: e.target.value })

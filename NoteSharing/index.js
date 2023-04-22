@@ -9,9 +9,9 @@ const io = require('socket.io')(server,{
 
 io.on('connection', (socket) => {
 
-    //Forming Room
-    // socket.to("some room").emit("some event");
-    //Forming Room
+    // Forming Room
+    socket.to("some room").emit("some event");
+    // Forming Room
 
     console.log('what is socket: ', socket);
     console.log("Socket is active to be connected");
